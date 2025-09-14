@@ -12,16 +12,16 @@ NOTE: This is Header style file. All Header related style included in this file.
   margin-left: 26px;
 }
 .social-links {
-  padding: 18px 0 16px;
+  padding: 2px 0 1px;
   text-align: right;
 }
 .header-top {
-  border-bottom: 1px solid rgba(167, 167, 167, 0.1);
+  display: none !important;
 }
 .header-top-left > span {
   display: block;
-  padding: 20px 0 14px;
-  font-size: 13px;
+  padding: 2px 0 1px;
+  font-size: 11px;
 }
 .social-links > a:hover {
   color: #ffffff;
@@ -32,7 +32,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   position: relative;
 }
 .logo {
-  padding: 29px 0 30px;
+  padding: 2px 0 3px;
 }
 .logo a {
   display: inline-block;
@@ -59,8 +59,8 @@ NOTE: This is Header style file. All Header related style included in this file.
   color: #ffffff;
   display: inline-block;
   font-family: "oswaldmedium";
-  font-size: 13px;
-  line-height: 79px;
+  font-size: 11px;
+  line-height: 25px;
   padding: 0;
   position: relative;
   text-transform: uppercase;
@@ -150,23 +150,24 @@ NOTE: This is Header style file. All Header related style included in this file.
 .header-sticky.sticky {
   -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
-  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
-  box-shadow: 0 0 9.9px 0.1px rgba(91, 91, 91, 0.2);
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   left: 0;
   padding: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9;
+  height: 23px !important;
 }
 .sticky .main-menu > nav > ul > li {
   padding: 0;
 }
 .sticky .main-menu > nav > ul > li > a {
-  line-height: 70px;
+  line-height: 23px;
 }
 .sticky .logo {
-  padding: 23px 0;
+  padding: 1px 0 2px;
 }
 .sticky .main-menu {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -181,7 +182,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .header-area .sticky .main-menu > nav > ul > li > a,
 .header-full-area .sticky .main-menu > nav > ul > li > a {
-  line-height: 65px;
+  line-height: 23px;
 }
 .mobile-menu-area {
   background-color: #fff;

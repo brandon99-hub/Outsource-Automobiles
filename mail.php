@@ -18,9 +18,9 @@
             exit;
         }
 
-        // Set the recipient email address.
-        // FIXME: Update this to your desired email address.
-        $recipient = "admin@devitems.gmail.com";
+        // Set the recipient email addresses.
+        $recipient = "admin@outsourceltdke.com";
+        $cc_recipient = "info@outsourceltdke.com";
 
         // Set the email subject.
         $subject = "New contact from $name";
@@ -33,7 +33,10 @@
         $email_content .= "Message:\n$message\n";
 
         // Build the email headers.
-        $email_headers = "From: $name <$email>";
+        $email_headers = "From: $name <$email>\r\n";
+        $email_headers .= "Reply-To: $email\r\n";
+        $email_headers .= "CC: $cc_recipient\r\n";
+        $email_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
