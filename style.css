@@ -3898,6 +3898,20 @@ html {
   }
 }
 
+/* Counter Display Fix */
+.counter {
+  display: inline-block !important;
+  min-width: 2em !important;
+  text-align: center !important;
+}
+
+/* Ensure counter values display correctly */
+.stat-number .counter {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
 /* Modern About Page Styles */
 .about-hero-section {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);

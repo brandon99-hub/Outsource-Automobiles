@@ -231,16 +231,28 @@
 /*-----------------------------------------
     06. Counter Up
 ------------------------------------------ */	
+    // Set counter values immediately to prevent animation issues
+    $('.counter').each(function() {
+        var targetValue = $(this).attr('data-target') || $(this).text();
+        $(this).data('target', targetValue);
+        // Set the initial display value
+        $(this).text(targetValue);
+    });
+    
     $('.counter').counterUp({
         delay: 70,
         time: 5000
     });
     
-    // Ensure counter values are set correctly before animation
-    $('.counter').each(function() {
-        var targetValue = $(this).text();
-        $(this).data('target', targetValue);
-    });
+    // Force correct values after animation
+    setTimeout(function() {
+        $('.counter').each(function() {
+            var targetValue = $(this).attr('data-target') || $(this).data('target');
+            if (targetValue) {
+                $(this).text(targetValue);
+            }
+        });
+    }, 6000);
 	
 /*------------------------------------------
     07. ScrollUp
