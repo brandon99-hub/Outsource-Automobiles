@@ -240,10 +240,86 @@
     07. ScrollUp
 ------------------------------------------- */	
 	$.scrollUp({
-        scrollText: '<i class="icon-arrow-up"></i>',
-        easingType: 'linear',
-        scrollSpeed: 900,
-        animation: 'fade'
+        scrollText: '<i class="fa fa-car"></i>',
+        easingType: 'swing',
+        scrollSpeed: 800,
+        animation: 'fade',
+        scrollName: 'scrollUp',
+        scrollTitle: 'Back to Top',
+        scrollImg: false,
+        activeOverlay: false,
+        zIndex: 9998,
+        scrollFrom: 'bottom',
+        scrollDistance: 300
+    });
+
+/*------------------------------------------
+    Enhanced ScrollUp Functionality
+------------------------------------------- */
+    // Enhanced scroll behavior with proper show/hide
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var scrollUp = $('#scrollUp');
+        
+        if (scroll > 300) {
+            scrollUp.removeClass('hide').addClass('show');
+        } else {
+            scrollUp.removeClass('show').addClass('hide');
+        }
+        
+        // Add scroll progress indicator
+        var winHeight = $(window).height();
+        var docHeight = $(document).height();
+        var scrollPercent = (scroll / (docHeight - winHeight)) * 100;
+        
+        // Update button appearance based on scroll position
+        if (scrollPercent > 50) {
+            scrollUp.addClass('scroll-progress');
+        } else {
+            scrollUp.removeClass('scroll-progress');
+        }
+    });
+    
+    // Smooth scroll to top with enhanced animation
+    $(document).on('click', '#scrollUp', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Back to top button clicked!'); // Debug log
+        
+        // Add click animation
+        $(this).addClass('clicked');
+        
+        // Multiple scroll methods for maximum compatibility
+        try {
+            // Method 1: jQuery animate
+            $('html, body').stop(true, false).animate({
+                scrollTop: 0
+            }, 800, 'swing', function() {
+                $('#scrollUp').removeClass('clicked');
+            });
+            
+            // Method 2: Native smooth scroll (fallback)
+            if (window.scrollTo) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Method 3: Direct scroll (last resort)
+            setTimeout(function() {
+                if (window.pageYOffset > 0) {
+                    window.scrollTo(0, 0);
+                }
+            }, 100);
+            
+        } catch (error) {
+            console.log('Scroll error:', error);
+            // Fallback: instant scroll
+            window.scrollTo(0, 0);
+            $('#scrollUp').removeClass('clicked');
+        }
     });  
 
 /*------------------------------------------
