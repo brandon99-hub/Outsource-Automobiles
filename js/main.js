@@ -235,6 +235,12 @@
         delay: 70,
         time: 5000
     });
+    
+    // Ensure counter values are set correctly before animation
+    $('.counter').each(function() {
+        var targetValue = $(this).text();
+        $(this).data('target', targetValue);
+    });
 	
 /*------------------------------------------
     07. ScrollUp

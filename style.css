@@ -3723,6 +3723,62 @@ html {
   }
 }
 
+/* Additional Mobile Text Fixes */
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  .section-title h5 {
+    font-size: 14px !important;
+    margin-bottom: 10px;
+  }
+  
+  .section-title p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    padding: 0 10px !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Fix long text in service descriptions */
+  .single-service h4 {
+    font-size: 16px;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+  
+  .single-service p {
+    font-size: 13px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  
+  /* Fix container overflow */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Fix text in cards */
+  .card-body h4,
+  .card-body h5 {
+    font-size: 14px;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+  
+  .card-body p {
+    font-size: 12px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+}
+
 /* Modern About Page Styles */
 .about-hero-section {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -4248,6 +4304,22 @@ html {
   .section-subtitle {
     font-size: 16px;
     padding: 0 20px;
+  }
+  
+  /* Services Section Mobile Fixes */
+  .service-area .section-title h2 {
+    font-size: 20px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .service-area .section-title p {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .image-grid {
